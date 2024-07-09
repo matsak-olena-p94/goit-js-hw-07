@@ -1,35 +1,16 @@
-class StringBuilder {
-  #value;
+// Отримуємо доступ до інпуту та спана
+const input = document.getElementById('name-input');
+const output = document.getElementById('name-output');
 
-  constructor(value) {
-    this.#value = value;
-  }
+// Додаємо подію "input" до інпуту
+input.addEventListener('input', function() {
+    // Отримуємо поточне значення інпуту та очищуємо від пробілів по краях
+    const inputValue = input.value.trim();
 
-  getValue() {
-    return this.#value;
-  }
-
-  padEnd(str) {
-    this.#value += str;
-  }
-
-  padStart(str) {
-    this.#value = str + this.#value;
-  }
-
-  padBoth(str) {
-    this.padStart(str);
-    this.padEnd(str);
-  }
-}
-
-
-
-const builder = new StringBuilder(".");
-console.log(builder.getValue()); // "."
-builder.padStart("^");
-console.log(builder.getValue()); // "^."
-builder.padEnd("^");
-console.log(builder.getValue()); // "^.^"
-builder.padBoth("=");
-console.log(builder.getValue()); // "=^.^="
+    // Встановлюємо текст для спана в залежності від значення інпуту
+    if (inputValue === '') {
+        output.textContent = 'Anonymous';
+    } else {
+        output.textContent = inputValue;
+    }
+});
