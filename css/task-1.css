@@ -1,0 +1,10 @@
+.item {
+    list-style-type: none;
+    border-radius: 8px;
+padding: 16px;
+width: 392px;
+overflow: hidden; 
+object-fit: cover;
+display: block;
+background: #f6f6fe;
+}

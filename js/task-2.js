@@ -39,4 +39,4 @@ const createGalleryImages = (images) =>
   });
 const galleryImages = createGalleryImages(images);
 console.log(galleryImages);
-galleryImages.append(...galleryImages);
+galleryImg.append(...galleryImages);
